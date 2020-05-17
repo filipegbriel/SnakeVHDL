@@ -1,0 +1,6 @@
+vcom -reportprogress 300 -work work clock_generator.vhd d_ff.vhd mux.vhd 
+vcom -reportprogress 300 -work work stimuli_num_gen.vhd tb_num_gen.vhd 
+vcom -reportprogress 300 -work work flsr_galois.vhd  num_gen.vhd
+vsim -gui -voptargs=+acc work.tb_num_gen
+add wave sim:/tb_num_gen/*
+run 5000ns

@@ -1,0 +1,6 @@
+vcom -reportprogress 300 -work work clock_generator.vhd snake_package.vhd
+vcom -reportprogress 300 -work work stimuli_fsm_init.vhd tb_fsm_init.vhd 
+vcom -reportprogress 300 -work work fsm_init.vhd  
+vsim -gui -voptargs=+acc work.tb_fsm_init
+add wave sim:/tb_fsm_init/*
+run 5000ns
